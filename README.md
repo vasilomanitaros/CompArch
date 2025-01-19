@@ -181,7 +181,7 @@ Larger caches offer higher capacity but come with increased implementation costs
 Taking into consideration all that and the upper limits of the design, as well as commonly used values we construct the following cost function (between 0 and 200):
 
 $$
-\text{Cost} = 0.2 \cdot \text{L1\_I\_size} + 0.2 \cdot \text{L1\_D\_size} + 0.05 \cdot \text{L2\_size} + 5 \cdot (2^{\text{L1\_I\_assoc}} + 2^{\text{L1\_D\_assoc}} + 2^{\text{L2\_assoc}}) + 0.5 \cdot \text{line\_size}
+Cost = 0.2 \cdot L1\textunderscore I\textunderscore size + 0.2 \cdot L1\textunderscore D\textunderscore size + 0.05 \cdot L2\textunderscore size + 5 \cdot (2^{L1\textunderscore I\textunderscore assoc} + 2^{L1\textunderscore D\textunderscore assoc} + 2^{L2\textunderscore assoc}) + 0.5 \cdot line\textunderscore size
 $$
 
 Then by taking a wide range of combinations we ended to the following ones:
