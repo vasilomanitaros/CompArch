@@ -179,6 +179,7 @@ This is logical due to the higher memory bandwidth and lower latency of DDR3_213
 Given as a task to design a cost function and rerun specific benchmarks to obtain an optimum result (low CPI at most possible low cost) we consider the following facts from the bibliography (Computer Architecture: A Quantitive Approach):
 Larger caches offer higher capacity but come with increased implementation costs and access latency. The cost of implementation grows approximately linearly with size, while latency increases logarithmically. L1 caches have a higher cost per unit size compared to L2 caches due to their tighter timing requirements and proximity to the processor core. Higher associativity in caches reduces conflict misses but increases complexity due to the number of comparators and multiplexing logic required, with costs growing roughly exponentially with associativity, especially for larger caches. Larger cache lines improve spatial locality but lead to higher memory bandwidth usage and potential overfetch, with a moderate cost impact mainly affecting data storage and fetching from memory.
 Taking into consideration all that and the upper limits of the design, as well as commonly used values we construct the following cost function (between 0 and 200):
+
 $$
 \text{Cost} = 0.2 \cdot \text{L1\_I\_size} + 0.2 \cdot \text{L1\_D\_size} + 0.05 \cdot \text{L2\_size} + 5 \cdot (2^{\text{L1\_I\_assoc}} + 2^{\text{L1\_D\_assoc}} + 2^{\text{L2\_assoc}}) + 0.5 \cdot \text{line\_size}
 $$
